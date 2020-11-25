@@ -157,6 +157,8 @@ class BundlesLoaderTest {
         assertEquals(Collections.emptyList(), toMessages(issues));
     }
 
+    // TODO test for metadata with scriptMetadata
+
     @ParameterizedTest
     @MethodSource("validateHttpMetadataIssuesProvider")
     void validateHttpMetadataIssues(FsBundle bundle, HttpMetadata metadata, List<String> expectedMessages) {
@@ -390,7 +392,8 @@ class BundlesLoaderTest {
                                 Collections.emptyList(),
                                 Collections.emptyList(),
                                 Collections.emptyList(),
-                                Collections.emptyList())
+                                Collections.emptyList(),
+                                null)
                 )
         );
     }
@@ -414,7 +417,8 @@ class BundlesLoaderTest {
                                 Collections.singletonList("bad"),
                                 Collections.emptyList(),
                                 Collections.emptyList(),
-                                Collections.emptyList()),
+                                Collections.emptyList(),
+                                null),
                         Arrays.asList(
                                 "Invalid value: field `created`, value `bad 2019-12-18T11:36:00`, pattern " +
                                         "`[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}`",
